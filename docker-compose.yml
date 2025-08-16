@@ -1,0 +1,14 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "8004:80"
+    container_name: cireng-rr
+    restart: unless-stopped
+    networks:
+      - app-net
+
+networks:
+  app-net:
